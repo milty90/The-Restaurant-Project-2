@@ -1,0 +1,165 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  max-width: 1290px;
+  margin: 0 auto;
+}
+body {
+  margin: 2em;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  border-radius: 30px 30px 0 0;
+  background-color: #fff7e6;
+  color: #2e2b2e;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  padding: 1em;
+}
+.home {
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  text-decoration: none;
+  background-color: #fff7e6;
+  color: #2e2b2e;
+  font-size: 1.5em;
+  padding-left: 1em;
+}
+.header_left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header_right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5em;
+}
+.home_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2em;
+  width: 49vw;
+}
+.home_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 2em;
+  width: 49vw;
+}
+.home_food_image {
+  width: auto;
+  height: 100%;
+}
+.me_icon {
+  display: none;
+}
+.btn_add_to_basket,
+.btn_menu {
+  background-color: #ffb84d;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn_menu {
+  display: none;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  list-style: none;
+  padding-right: 1em;
+}
+.explore_menu {
+  display: flex;
+  flex-direction: row;
+  background-color: #222022;
+  padding: 0.4em 2em;
+  padding-right: 0.5em;
+  padding-left: 1.2em;
+  gap: 2em;
+  color: white;
+  border-radius: 50px;
+  align-items: center;
+  font-size: 0.6em;
+  list-style: none;
+}
+.explore_menu_icon {
+  background-color: #ffb84d;
+  height: 80%;
+  border-radius: 30px;
+  border: 1px solid #ffffff;
+  padding: 0.5em;
+}
+h3 {
+  color: #2e2b2e;
+}
+
+img {
+  color: white;
+  width: 2em;
+  height: 2em;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 1em;
+    padding: 1em;
+  }
+  .menu {
+    display: none;
+  }
+  .me_icon {
+    display: flex;
+  }
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: auto;
+    text-align: top;
+  }
+  .home_left {
+    width: 80%;
+    padding: 0;
+    margin-bottom: 2em;
+    align-items: flex-start;
+  }
+  .home_right {
+    width: 100%;
+    padding: 0;
+  }
+  .home_food_image {
+    width: 100%;
+    height: auto;
+  }
+  .home_main_text {
+    font-size: 1.5em;
+    padding: 0;
+  }
+  .header_right {
+    justify-content: center;
+    gap: 1em;
+  }
+  .explore_menu {
+    margin-top: 2em;
+  }
+}
