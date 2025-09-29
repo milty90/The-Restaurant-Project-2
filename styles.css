@@ -1,6 +1,6 @@
 * {
   font-family: "Montserrat", sans-serif;
-  max-width: 1290px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 body {
@@ -36,6 +36,23 @@ body {
   padding-top: 2em;
   padding-bottom: 2em;
 }
+.contact {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9f9;
+  color: #2e2b2e;
+  border-radius: 0 0 30px 30px;
+  padding-top: 2em;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9f9;
+  color: #2e2b2e;
+  border-radius: 30px 30px 30px 30px;
+  margin-top: 2em;
+  padding: 2em;
+}
 .discover {
   background-color: #2e2b2e;
   color: white;
@@ -46,7 +63,7 @@ body {
 .getapp {
   background-color: #febd2f;
   color: #2e2b2e;
-  border-radius: 30px;
+  border-radius: 30px 30px 0 0;
   margin-top: 2em;
   padding: 2em;
 }
@@ -80,14 +97,17 @@ body {
 .getapp_image {
   display: none;
 }
-.home_main_text,
+.home_main_text {
+  font-size: 2.3em;
+  padding-top: 1.5em;
+}
 .offer_main_text,
 .about_main_text,
 .discover_main_text,
 .testimonial_main_text,
 .getapp_main_text {
   font-size: 2.3em;
-  padding-top: 1.5em;
+  padding-top: 0.6em;
 }
 .discover_main_text {
   color: #ffffff !important;
@@ -106,6 +126,14 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.2em;
+}
+.contact_info,
+.subscribe {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 0;
+  gap: 1em;
 }
 h3 {
   color: #2e2b2e;
@@ -140,11 +168,11 @@ h3 {
 .explore_menu,
 .learn_more,
 .find_restaurants {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 .view_full_menu {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .view_full_menu,
 .find_restaurants {
@@ -175,12 +203,29 @@ h3 {
   cursor: pointer;
 }
 .btn_add_to_basket,
-.btn_menu {
+.btn_menu,
+.subscribe_icon {
   background-color: #febd2f;
   padding-top: 0.3em;
   border-radius: 5px;
   border: 1px solid #ffffff;
   cursor: pointer;
+}
+
+.find_restaurants,
+.view_full_menu {
+  background-color: #febd2f;
+  height: fit-content;
+  color: #2e2b2e;
+  padding: 1em;
+  border-radius: 25px;
+  border: 0px solid #febd2f;
+}
+.input_email {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #2e2b2e;
+  height: 2em;
 }
 .getapp_buttons {
   display: flex;
@@ -192,14 +237,303 @@ h3 {
 }
 .btn_appstore,
 .btn_playstore {
-  width: 100%;
+  width: 90%;
   height: auto;
   cursor: pointer;
+}
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 1em;
+}
+.categoris,
+.links {
+  display: none;
+}
+.social_media_icons {
+  display: flex;
+  flex-direction: row;
+  max-width: 250px;
+  gap: 1em;
+  padding-top: 1em;
+}
+.stayconnected {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
 }
 img {
   color: white;
   width: 2em;
   height: 2em;
 }
-@media only screen and (min-width: 600px) {
+.btn_add_to_basket:hover,
+.btn_menu:hover,
+.subscribe_icon:hover {
+  transform: scale(1.2);
+}
+.offer_card:hover,
+.view_full_menu:hover,
+.find_restaurants:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.explore_menu_icon:hover,
+.learn_more_icon:hover {
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translateX(15px);
+}
+
+@media only screen and (min-width: 680px) {
+  body {
+    margin: 1.5em;
+    padding: 1.5em;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgb(72, 71, 71);
+    justify-content: center;
+    padding-right: 1em;
+    gap: 1em;
+  }
+  .btn_menu {
+    display: none;
+  }
+  .home {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff7e6;
+    align-items: center;
+    justify-content: center;
+    padding: 0em 2em 0em 2em;
+    height: auto;
+    text-align: top;
+  }
+  .home_left,
+  .about_left,
+  .discover_left,
+  .testimonial_left,
+  .getapp_right {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+  }
+  .home_right,
+  .about_right,
+  .discover_right,
+  .testimonial_right .getapp_right {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+  }
+  .offer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+    text-align: top;
+    padding-top: 3em;
+    padding-bottom: 2em;
+  }
+  .about,
+  .discover,
+  .testimonial,
+  .getapp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: top;
+    margin-bottom: 3rem;
+    width: 90%;
+    gap: 1em;
+  }
+  .contact {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: center;
+    text-align: top;
+
+    gap: 1em;
+  }
+  .discover {
+    background-color: #2e2b2e;
+    color: white;
+    border-radius: 30px;
+    margin-top: 2em;
+    padding: 2em;
+  }
+  .explore_menu,
+  .learn_more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2e2b2e;
+    color: white;
+    gap: 0.5em;
+
+    border-radius: 45px;
+  }
+  .view_full_menu,
+  .find_restaurants {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #febd2f;
+    color: white;
+    padding: 0.6em 1em 0.6em 1em;
+    border-radius: 45px;
+  }
+  .explore_menu_icon,
+  .learn_more_icon {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-color: #febd2f;
+    border-radius: 50px;
+    padding: 0.5em;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+  }
+  .offer_main_text,
+  .about_main_text,
+  .discover_main_text,
+  .testimonial_main_text,
+  .getapp_main_text {
+    font-size: 2em;
+    padding-top: 0.6em;
+  }
+  .home_sub_text,
+  .about_sub_text,
+  .testimonial_sub_text {
+    font-size: 1.2em;
+    padding-top: 0.8em;
+    padding-bottom: 0.5em;
+  }
+  .home_food_image,
+  .about_food_image,
+  .discover_food_image,
+  .testimonial_food_image {
+    display: flex;
+    width: 100%;
+  }
+  .getapp_image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .offer_cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2em;
+    padding-top: 2em;
+    margin: 2em;
+  }
+  .offer_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff7e6;
+    width: 90%;
+    height: 220px;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .social_media_icons {
+    display: flex;
+    flex-direction: row;
+    max-width: 250px;
+    gap: 1em;
+    padding-top: 1em;
+  }
+  .explore_menu_icon:hover,
+  .learn_more_icon:hover {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: translateX(10px);
+  }
+}
+@media only screen and (min-width: 900px) {
+  body {
+    margin: 1em;
+    padding: 3em;
+  }
+  .navbar {
+    padding: 1.5em 2em 0em 2em;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+  }
+  .home_left {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1em;
+    width: 50%;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  .home_right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 0;
+  }
+  .home_main_text {
+    font-size: 3em;
+    padding-top: 1.5em;
+  }
+  .offer_cards {
+    flex-direction: row;
+    gap: 2em;
+    padding-top: 2em;
+    margin: 2em;
+  }
+  .offer_card {
+    width: 250px;
+    height: 300px;
+  }
+  .explore_menu,
+  .learn_more,
+  .view_full_menu,
+  .find_restaurants {
+    display: flex;
+    align-items: center;
+    max-width: 150px;
+    justify-content: center;
+    background-color: #2e2b2e;
+    color: white;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 45px;
+  }
+  .explore_menu_icon,
+  .learn_more_icon {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-color: #febd2f;
+    border-radius: 50px;
+    padding: 0.5em;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+  }
 }
