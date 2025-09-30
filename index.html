@@ -20,28 +20,28 @@
           <h3>PurePlate</h3>
         </div>
         <div class="header_right">
-          <article class="menu">
-            <p id="home" alt="home">Home</p>
-            <p id="offer" alt="offer">Offer</p>
-            <p id="about" alt="about">About</p>
-            <p id="signin" alt="sign in">Sign in</p>
-          </article>
-          <button class="btn_add_to_basket" alt="add to basket">
+          <button class="btn_add_to_basket" alt="add to basket" onclick="alert('This is a demo website. The basket functionality is not implemented.')">
             <img src="images/add-to-basket.png" />
           </button>
           <button class="btn_menu">
             <img src="images/menu.png" />
           </button>
+          <div class="menu">
+            <a href="#home" id="menu-home" alt="home">Home</a>
+            <a href="#offer" id="menu-offer" alt="offer">Offer</a>
+            <a href="#about" id="menu-about" alt="about">About</a>
+            <a href="#signin" id="menu-signin" alt="sign in">Sign in</a>
+          </div>
         </div>
       </nav>
     </header>
-    <section class="home">
+    <section id="home" class="home">
       <div class="home_left">
         <h3 class="home_main_text">Meet, Eat & Enjoy The true taste</h3>
         <p class="home_sub_text">Start your day with a healthy meal</p>
         <article class="explore_menu">
           <p>Explore Menu</p>
-          <button class="explore_menu_icon">
+          <button class="explore_menu_icon" onclick="document.getElementById('offer').scrollIntoView();">
             <img src="images/next.png" alt="arrow right" />
           </button>
         </article>
@@ -54,7 +54,7 @@
         />
       </div>
     </section>
-    <section class="offer">
+    <section id="offer" class="offer">
       <h3 class="offer_main_text">
         We offer people best way to eat healthy and food.
       </h3>
@@ -85,7 +85,7 @@
         </div>
       </div>
     </section>
-    <section class="about">
+    <section id="about" class="about">
       <div class="about_left">
         <img
           class="about_food_image"
@@ -102,16 +102,16 @@
         <article class="learn_more">
           <p>Learn More</p>
           <button class="learn_more_icon">
-            <img src="images/next.png" alt="arrow right" />
+            <img src="images/next.png" alt="arrow right" onclick="document.getElementById('testimonial').scrollIntoView();" />
           </button>
         </article>
       </div>
     </section>
-    <section class="discover">
+    <section id="discover" class="discover">
       <div class="discover_left">
-        <h3 class="discover_main_text">Discover Restaurants Near from You</h3>
-        <button class="find_restaurants"><p>Find Restaurants</p></button>
-        <button class="view_full_menu">
+        <h3 class="discover_main_text">Discover Restaurants Near from You.</h3>
+        <button class="find_restaurants" alt="add to basket" onclick="alert('This is a demo website. The find functionality is not implemented.')"><p>Find Restaurants</p></button>
+        <button class="view_full_menu" alt="add to basket" onclick="alert('This is a demo website. The view full menu functionality is not implemented.')">
           <p>View Full Menu</p>
         </button>
       </div>
@@ -123,12 +123,12 @@
         />
       </div>
     </section>
-    <section class="testimonial">
+    <section id="testimonial"  class="testimonial">
       <div class="testimonial_left">
         <h3 class="testimonial_main_text">What people's Say about PurePlate</h3>
         <p class="testimonial_sub_text">
           Our customers are our biggest fans. Read what they have to say about
-          our food and service.
+          our food and service.  <a class="testimonial_link" href="#about">Learn More</a>
         </p>
       </div>
       <div class="testimonial_right">
@@ -138,12 +138,12 @@
           alt="delicious food"
         />
     </section>
-    <section class="getapp">
+    <section id="signin" class="getapp">
       <div class="getapp_left">
         <h3 class="getapp_main_text">Simple way to order your food</h3>
        <div class="getapp_buttons">
-        <img class="btn_appstore" src="images/apple.png" alt="app store button" />
-        <img class="btn_playstore" src="images/google.png" alt="play store button" />
+        <img class="btn_appstore" src="images/apple.png" alt="app store button" onclick="window.open('https://www.apple.com/app-store/', '_blank')" />
+        <img class="btn_playstore" src="images/google.png" alt="play store button" onclick="window.open('https://play.google.com/store', '_blank')" />
       </div>
       </div>
       <div class="getapp_right">
@@ -163,12 +163,11 @@
         <p>789 Placeholder Rd</p>
         <p>Fictionville</p>
         <p>EX 12345, USA</p>
-        
       </div>
 
       <div class="categoris">
         <h3>Categories</h3>
-        <article>
+        <article class="link">
           <p>Italian</p>
           <p>Chinese</p>
           <p>Indian</p>
@@ -177,7 +176,7 @@
       </div>
       <div class="links">
         <h3>Userful Links</h3>
-        <article>
+        <article class="link">
           <p>About Us</p>
           <p>Offers & Discounts</p>
           <p>Get Coupon</p>
@@ -188,7 +187,7 @@
         <h3>Stay Connected</h3>
         <article class="subscribe">
           <input class="input_email" type="text" placeholder="Enter Email Address" />
-          <button class="subscribe_icon">
+          <button class="subscribe_icon" alt="subscribe button" onclick="alert('This is a demo website. The subscribe functionality is not implemented.')">
           <img src="images/next.png" alt="arrow right" />
           </button>
         </article>
@@ -205,10 +204,10 @@
     <footer class="footer">
       <p>© 2025 PurePlate. All rights reserved</p>
       <div class="social_media_icons">
-        <img src="images/facebook.png" alt="facebook icon" />
-        <img src="images/twitter.png" alt="twitter icon" />
-        <img src="images/google-plus.png" alt="google plus icon" />
-        <img src="images/youtube.png" alt="youtube icon" />
+        <img src="images/facebook.png" alt="facebook icon" onclick="window.open('https://www.facebook.com', '_blank') " />
+        <img src="images/twitter.png" alt="twitter icon" onclick="window.open('https://www.twitter.com', '_blank')" />
+        <img src="images/google-plus.png" alt="google plus icon" onclick="window.open('https://www.google.com', '_blank')" />
+        <img src="images/youtube.png" alt="youtube icon" onclick="window.open('https://www.youtube.com', '_blank')" />
     </footer>
   </body>
 </html>

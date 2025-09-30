@@ -3,6 +3,9 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 1em;
   padding: 1em;
@@ -18,6 +21,30 @@ body {
 }
 .menu {
   display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  flex-direction: column;
+  gap: 0.5em;
+  z-index: 1000;
+  min-width: 150px;
+}
+.menu a {
+  margin: 0;
+  padding: 0.5em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.menu a:hover {
+  background-color: #f0f0f0;
 }
 .me_icon {
   display: flex;
@@ -78,10 +105,12 @@ footer {
   text-align: top;
 }
 .home_left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 80%;
   padding: 0;
   margin-bottom: 2em;
-  align-items: flex-start;
 }
 .home_right {
   width: 100%;
@@ -126,6 +155,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 0.2em;
+  position: relative;
 }
 .contact_info,
 .subscribe {
@@ -176,7 +206,7 @@ h3 {
 }
 .view_full_menu,
 .find_restaurants {
-  width: 220px;
+  width: 100%;
 }
 .explore_menu,
 .learn_more,
@@ -188,6 +218,7 @@ h3 {
   justify-content: center;
   background-color: #2e2b2e;
   color: white;
+  gap: 0.5em;
   padding: 0.5em 1em 0.5em 1em;
   border-radius: 45px;
 }
@@ -201,6 +232,12 @@ h3 {
   padding: 0.5em;
   border: 1px solid #ffffff;
   cursor: pointer;
+}
+.testimonial_link {
+  text-decoration: none;
+  color: #f0894a;
+  margin: 5em 0;
+  font-weight: 600;
 }
 .btn_add_to_basket,
 .btn_menu,
@@ -283,7 +320,17 @@ img {
 .explore_menu_icon:hover,
 .learn_more_icon:hover {
   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-  transform: translateX(15px);
+  transform: translateX(8px);
+}
+.social_media_icons img:hover {
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 679px) {
+  .btn_menu:hover + .menu,
+  .menu:hover {
+    display: flex;
+  }
 }
 
 @media only screen and (min-width: 680px) {
@@ -299,6 +346,15 @@ img {
     justify-content: center;
     padding-right: 1em;
     gap: 1em;
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  .header_right {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1em;
   }
   .btn_menu {
     display: none;
@@ -306,23 +362,35 @@ img {
   .home {
     display: flex;
     flex-direction: row;
-    background-color: #fff7e6;
+    position: sticky;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
+    background-color: #fff7e6;
     padding: 0em 2em 0em 2em;
     height: auto;
     text-align: top;
   }
   .home_left,
   .about_left,
-  .discover_left,
   .testimonial_left,
   .getapp_right {
     display: flex;
+    position: sticky;
+    justify-content: space-around;
+    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
     gap: 1em;
     width: 100%;
   }
+  .discover_left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1em;
+    width: 80%;
+  }
+
   .home_right,
   .about_right,
   .discover_right,
@@ -332,6 +400,7 @@ img {
     gap: 1em;
     width: 100%;
   }
+
   .offer {
     display: flex;
     flex-direction: column;
@@ -342,6 +411,40 @@ img {
     text-align: top;
     padding-top: 3em;
     padding-bottom: 2em;
+  }
+  .address,
+  .categoris {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4em;
+    padding: 0.8em;
+    flex: 1;
+  }
+  .categoris h3,
+  .categoris p,
+  .links h3,
+  .links p {
+    text-align: left;
+    align-self: flex-start;
+  }
+  .categoris .link,
+  .links .link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .stayconnected {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    padding: 1em;
+    flex: 1;
+  }
+  .contact p {
+    padding-top: 0.5em;
   }
   .about,
   .discover,
@@ -356,16 +459,30 @@ img {
     width: 90%;
     gap: 1em;
   }
+  .getapp {
+    margin-bottom: 0rem;
+  }
+  .about {
+    gap: 3em;
+  }
   .contact {
     display: flex;
     flex-direction: row;
-    align-items: top;
-    justify-content: center;
-    text-align: top;
-
-    gap: 1em;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+    gap: 1.5em;
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
   .discover {
+    display: flex;
+    position: sticky;
+    height: 250px;
+    justify-content: space-around;
+    align-items: center;
     background-color: #2e2b2e;
     color: white;
     border-radius: 30px;
@@ -403,6 +520,9 @@ img {
     padding: 0.5em;
     border: 1px solid #ffffff;
     cursor: pointer;
+  }
+  .discover_main_text {
+    padding-left: 1.5em;
   }
   .offer_main_text,
   .about_main_text,
@@ -465,6 +585,12 @@ img {
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     transform: translateX(10px);
   }
+  .menu a:hover {
+    background-color: #f0f0f000;
+    color: #2e2b2e;
+    font-weight: 600;
+    transform: scale3d(1.1, 1.1, 1);
+  }
 }
 @media only screen and (min-width: 900px) {
   body {
@@ -472,6 +598,11 @@ img {
     padding: 3em;
   }
   .navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff7e6;
+    border-radius: 25px 30px 0 0px;
+    align-items: center;
     padding: 1.5em 2em 0em 2em;
   }
   .menu {
@@ -481,22 +612,27 @@ img {
     justify-content: center;
     gap: 2em;
   }
+  .home {
+    padding: 2em 4em 0em 4em;
+  }
+  .getapp {
+    padding: 2em 3.2em 2em 3.2em;
+  }
+
   .home_left {
     display: flex;
     flex-direction: column;
-
+    align-items: flex-start;
+    justify-content: center;
     gap: 1em;
-    width: 50%;
-    padding: 0;
-    margin-bottom: 0;
+    width: 100%;
   }
   .home_right {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
-    padding: 0;
+    width: 100%;
   }
   .home_main_text {
     font-size: 3em;
@@ -512,17 +648,28 @@ img {
     width: 250px;
     height: 300px;
   }
+
   .explore_menu,
-  .learn_more,
+  .learn_more {
+    display: flex;
+    align-items: center;
+    max-width: 200px;
+    justify-content: center;
+    background-color: #2e2b2e;
+    color: white;
+    padding: 0.3em 1em 0.3em 1em;
+    border-radius: 45px;
+  }
   .view_full_menu,
   .find_restaurants {
     display: flex;
     align-items: center;
-    max-width: 150px;
+    max-width: 220px;
+    height: 45px;
     justify-content: center;
-    background-color: #2e2b2e;
+    background-color: #febd2f;
     color: white;
-    padding: 0.5em 1em 0.5em 1em;
+    padding: 0.6em 2em 0.6em 2em;
     border-radius: 45px;
   }
   .explore_menu_icon,
@@ -535,5 +682,48 @@ img {
     padding: 0.5em;
     border: 1px solid #ffffff;
     cursor: pointer;
+  }
+
+  .address,
+  .categoris,
+  .links,
+  .stayconnected {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+    padding: 1em;
+    flex: 1;
+  }
+  .about,
+  .discover {
+    margin-bottom: 10rem;
+  }
+
+  .links h3,
+  .links p {
+    text-align: left;
+    align-self: center;
+    margin: 0;
+    width: 100%;
+  }
+  .categoris .link,
+  .links .link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .contact p {
+    padding-top: 0.5em;
+  }
+  .contact p {
+    padding-top: 0.5em;
+  }
+  .stayconnected {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
   }
 }

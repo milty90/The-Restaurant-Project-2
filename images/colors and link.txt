@@ -1,5 +1,0 @@
-Color Primary: #FEBD2F;
-Color Primary Variant: #FFF7E6;
-Color Secondary: #F0894A;
-On Secondary: #2E2B2E;
-Link: https://dribbble.com/shots/14718090-Foodicted-Food-Landing-Page-UXUI-Design;
