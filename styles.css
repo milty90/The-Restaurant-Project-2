@@ -448,8 +448,7 @@ img {
   }
   .about,
   .discover,
-  .testimonial,
-  .getapp {
+  .testimonial {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -465,16 +464,24 @@ img {
   .about {
     gap: 3em;
   }
-  .contact {
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    color: #2e2b2e;
+    border-radius: 30px 30px 30px 30px;
+    margin-top: 2em;
+    padding: 2em;
+  }
+  .contact,
+  .getapp {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
     text-align: left;
-    gap: 1.5em;
     padding: 2em;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding-top: 2em;
     box-sizing: border-box;
   }
   .discover {
